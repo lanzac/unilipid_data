@@ -1,0 +1,46 @@
+#--- GeneralSimulation ---
+timestep = 1.0
+samplerate = 5000
+nbsteps = 10000
+
+#--- GeneralSimulation:Trajectory ---
+enablecsvsample = false
+csvsamplefilename = OmpA_imd_out.csv
+csvsamplefreq = 100
+
+#--- SpringNetwork ---
+enablespring = false
+springscale = 100.0
+enableviscosity = true
+viscosity = 0.001
+
+#--- FF:Steric ---
+enablesteric = false
+stericcutoff = 16
+
+#--- FF:Electrostatic ---
+enablecoulomb = false
+dielectric = 80
+
+#--- FF:Density ---
+
+#--- FF:IMPALA ---
+enableimp = true
+impscale = 1.0
+enableinsertionvector = true
+insertionvector = CA34 CA45
+#insertionvector = BB34 BB45
+
+
+#--- Rigid body ---
+enablerigidbody = true
+enablemontecarlo = false
+montecarlotemperature = 420.0
+enableimpalasampling = false
+
+
+#--- FF:Hydrophobic ---
+
+#--- FF:Probe ---
+
+#--- AutomaticConstraints ---

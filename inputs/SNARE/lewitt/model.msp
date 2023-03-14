@@ -1,0 +1,47 @@
+
+#--- GeneralSimulation ---
+timestep = 3.0
+samplerate = 5000
+#nbsteps = 10000
+
+#--- GeneralSimulation:Trajectory ---
+enablecsvsample = false
+csvsamplefilename = out.csv
+csvsamplefreq = 100
+
+#--- SpringNetwork ---
+enablespring = true
+springscale = 100.0
+enableviscosity = true
+viscosity = 1.0
+
+#--- FF:Steric ---
+enablesteric = false
+stericcutoff = 16
+
+#--- FF:Electrostatic ---
+enablecoulomb = false
+dielectric = 80
+
+#--- FF:Density ---
+
+#--- FF:IMPALA ---
+enableimp = true
+impscale = 80.0
+enableinsertionvector = false
+
+#--- Rigid body ---
+enablerigidbody = false
+enableimpalasampling = false
+enablemontecarlo = false
+enablesplitchains = false
+montecarlorotation = 0.5
+montecarlotemperature = 298.15
+montecarlotranslation = 0.1
+
+
+#--- FF:Hydrophobic ---
+
+#--- FF:Probe ---
+
+#--- AutomaticConstraints ---
