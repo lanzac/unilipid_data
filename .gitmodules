@@ -1,0 +1,3 @@
+[submodule "inputs/transfer_energies_adjustment"]
+	path = inputs/transfer_energies_adjustment
+	url = git@github.com:lanzac/transfer_energies_adjustment.git
