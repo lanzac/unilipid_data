@@ -4,10 +4,10 @@ This public repository provides the *UnityMol* and *BioSpring* software as well 
 
 Lanrezac A, Baaden M. "UNILIPID, a Methodology for Energetically Accurate Prediction of Protein Insertion into Implicit Membranes of Arbitrary Shape" Membranes (2023) DOI: [10.3390/membranes13030362](https://doi.org/10.3390/membranes13030362)
 
+---
+## 1. File organization
 
-## File organization
-
-### Inputs folder
+### 1.1 Inputs folder
 ```
 
 ├── README.md
@@ -43,7 +43,7 @@ Lanrezac A, Baaden M. "UNILIPID, a Methodology for Energetically Accurate Predic
     - __Particle parameters__: fixed or dynamic state, radii, mass, Steric Lennard-Jones potential energy parameter (epsilon), charge, accessible surface area, hydrophobicity, transfert energy for IMPALA model
 - In the SNARE system folder, the python script __test_dynPlot.py__, which connects to *UnityMol* during the interactive SNARE simulation, retrieves the insertion depth data of the transmembrane region and displays it dynamically on a plot for comparison with the reference data available in the __pos4ar1.dat__ file.
 
-### Software folder
+### 1.2 Software folder
 ```
 
 └── software
@@ -66,14 +66,14 @@ Lanrezac A, Baaden M. "UNILIPID, a Methodology for Energetically Accurate Predic
 - __UnityMol__ visualization software for visualization and interaction with the simulation in progress.
 - __BioSpring__ is supplied for macos and Unix and __UnityMol__ for macOS, Unix and Windows.
 
-## Get's started
+---
+## 2. Get's started
 
-OmpA video tutorial: https://youtu.be/5u2n3CKaPuY \
-SNARE video tutorial: https://youtu.be/cvBHfDa5VlM
+OmpA video tutorial: https://youtu.be/5u2n3CKaPuY 
 
-### OmpA system
+### 2.1 OmpA system
 
-#### Run UnityMol
+#### 2.1.1 Run UnityMol
 
 - Extract the UnityMol archive
 ``` 
@@ -85,7 +85,7 @@ unzip UnityMol_BioSpring_[your_platform].zip
 ```
 - Run UnityMol
 
-#### Load the scene in UnityMol
+#### 2.1.2 Load the scene in UnityMol
 
 - (1) Load the scene from script (fastest way)
     - __In UnityMol on the left panel__ go to `Utils/LoadScript` and open `unilipid_deposit/inputs/OmpA/all_atom/UMolState.py`
@@ -104,7 +104,7 @@ unzip UnityMol_BioSpring_[your_platform].zip
 
 > **_NOTE (IMD Representation):_** This representation uses the *HyperBalls* representation developed in the laboratory to display particles here as large balls that are easier to catch with the mouse during interaction.
 
-#### Run BioSpring simulation
+#### 2.1.3 Run BioSpring simulation
 
 - Switch to the terminal and run:
 ```
@@ -121,14 +121,14 @@ $bs_path/biospring --nc model.nc --msp model.nc --wait
 MDDriver > Interactive MD bind to /[your machine]/[port]
 ```
 
-#### Connect __UnityMol__ to __BioSpring__
+#### 2.1.4 Connect __UnityMol__ to __BioSpring__
 
 - __In UnityMol on the left panel__ go to `IMD/` : 
     - Keep blank the IP input field for a default connection on the local machine (localhost)
     - Click on the input field `Port: 8888` and enter the port you saw on the BioSpring standby output.
     - Click on `Connect`
 
-#### During the interactive simulation
+#### 2.1.5 During the interactive simulation
 
 > **_NOTE (User interface):_** To see the scene more clearly, you can close the bottom panel (dynamic graphs) which has just opened by clicking on the corresponding black arrow in the blue circle and open it again later to monitor the evolution of protein insertion parameters.
 
@@ -137,8 +137,51 @@ MDDriver > Interactive MD bind to /[your machine]/[port]
 
 > **_NOTE (IMD Parameters):_** These two parameters can also be set in the msp parameter input file. Modifying these parameters in the UI and sending them will override those previously defined in the MSP file. The values are not precisely defined, but chosen empirically to observe a smooth insertion of the protein into the membrane. You can, of course, change these values as you wish.
 
-- You can try to grab
+- You can try to grab some particles by holding down the left click and dragging them to manipulate the rigid structure in the membrane. By releasing the button, you observe how the insertion trajectory evolves to find a new stable state.
+- __In UnityMol on the left panel__ go to `BioSpring/IMD Tools/Visualization` and click on `ShowTransferEnergy` button __twice__  to display the hydrophobicity scale used by assigning it a colour gradient and colouring each particle accordingly. Click on `ShowColorBar` to show the hydrophobicity colour gradient bar.
 
+
+### 2.2 SNARE system
+SNARE video tutorial: https://youtu.be/cvBHfDa5VlM
+
+#### 2.2.1 Load the scene in UnityMol
+- (1) Load the scene from script (fastest way)
+    - __In UnityMol on the left panel__ go to `Utils/LoadScript` and open `unilipid_deposit/inputs/SNARE/lewitt/UMolState.py`
+- or (2) load the scene mannualy (as shown in `tutorial_OmpA.mov`) \
+    __In UnityMol on the left panel__:
+    - Load PDB file: Go to `Input/Load` and open `unilipid_deposit/inputs/SNARE/lewitt/model.pdb`
+    - Go to `BioSpring/IMD Tools/Visualization` and switch on `ShowMembrane`, set the `MembraneScale` slider to approx. 180, and click on `Set IMD representation` button.
+    - Go to `Loaded Molecules(1)/model` and remove all  existing representations juste under the selection `model_protein_or_nucleic` by clicking on the white cross in the blue circle. Add the representation `line` by clicking on the plus next to the `all_model` selection.
+
+#### 2.2.2 Run BioSpring simulation
+Same procedure as described in section 2.1.3
+
+#### 2.2.3 Connect UnityMol to BioSpring
+Same procedure as described in section 2.1.4
+
+#### 2.2.4 Some manipulations in UnityMol
+- __In UnityMol on the left panel__ go to `BioSpring/IMD Tools/Visualization` : 
+    - Vary gradually `DoubleMembraneOffset` slider from 0 to approx .30  and `MembraneScale` to approx. 180. Click on `ShowTransferEnergy` button __twice__. Click on `ShowColorBar` to show the hydrophobicity colour gradient bar.
+  
+- __In UnityMol on the left panel__ go to `BioSpring/IMD Tools/IMD Parameters` : 
+    - Set `IMPALAScaling` to approx. 20 and click on `SendParameters`
+  
+#### 2.2.4 Run the dynamic insertion plot
+- Switch to the terminal and run:
+```
+./unilipid_deposit/inputs/SNARE/test_dynPlot.py
+```
+- Switch to __UnityMol__, go to `BioSpring/IMD Tools/Analyze` and click on `TCPConnectTest` button. Depth data extracted from the current simulation (sent by UnityMol) is displayed on the dynamic graph
+
+- __In UnityMol on the left panel__ go to `BioSpring/IMD Tools/Visualization` :
+  -  Vary gradually `DoubleMembraneOffset` slider and observe the variation on the dynamic plot.
+
+### 2.3 Transfer energies adjustment algorithm
+- Repository link : https://github.com/lanzac/transfer_energies_adjustment
+``` 
+cd unilipid_deposit/inputs/transfer_energies_adjustment
+```
+- You can find a readme file in this folder.
 
 ## License
 
