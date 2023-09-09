@@ -1,7 +1,7 @@
 #--- GeneralSimulation ---
 timestep = 1.0
 samplerate = 5000
-nbsteps = 10000
+#nbsteps = 10000
 
 #--- GeneralSimulation:Trajectory ---
 enablecsvsample = false
