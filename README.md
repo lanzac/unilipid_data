@@ -71,7 +71,7 @@ Lanrezac A, Baaden M. "UNILIPID, a Methodology for Energetically Accurate Predic
     └── UnityMol
         ├── LICENSE.md
         ├── UnityMol_BioSpring_MacOS.zip
-        ├── ( UnityMol_BioSpring_Windows.zip ) <----- TO DO
+        ├── UnityMol_BioSpring_Windows.zip
         └── ( UnityMol_BioSpring_Linux.zip ) <----- TO DO
 
 ```
