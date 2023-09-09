@@ -1,7 +1,6 @@
 load(filePath="UNILIPID_data/inputs/SNARE/lewitt/model.pdb", readHetm=True, forceDSSP=False, showDefaultRep=True, center=False, modelsAsTraj=True, forceStructureType=-1)
 showPrimitiveMembrane()
 updatePrimitiveMembraneScale(180)
-updateDoubleMembraneOffset(30)
 select("all", "all_model", True, False, False, True, False, False, True)
 setIMDRepresentation()
 deleteRepresentationInSelection("model_protein_or_nucleic", "c")
