@@ -49,7 +49,7 @@ Lanrezac A, Baaden M. "UNILIPID, a Methodology for Energetically Accurate Predic
 - The *transfer_energies_adjustment* contains data and scripts for the prototype parameterization of transfer energy per particle from amino acid data for protein insertion experiments in implicit membranes. You'll find a specific readme in this UNILIPID development branch.
 
 ### 1.2 Software folder
-!!!! TREE NEEDS TO BE UPDATED WITH LAST LINUX BS BINARIES AND LINUX BUILD !!!
+!!!! TREE NEEDS TO BE UPDATED WITH LAST LINUX BS BINARIES !!!
 ```
 └── software
     ├── Biospring
@@ -72,7 +72,7 @@ Lanrezac A, Baaden M. "UNILIPID, a Methodology for Energetically Accurate Predic
         ├── LICENSE.md
         ├── UnityMol_BioSpring_MacOS.zip
         ├── UnityMol_BioSpring_Windows.zip
-        └── ( UnityMol_BioSpring_Linux.zip ) <----- TO DO
+        └── UnityMol_BioSpring_Linux.x86_64.zip
 
 ```
 #### What's in software folder ?
