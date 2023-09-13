@@ -1,4 +1,4 @@
-# UNILIPID DEPOSIT
+# UNILIPID DATA
 
 This public repository provides the *UnityMol* and *BioSpring* software as well as interactive simulation systems and the transfer energy parameter adjustment algorithm used in the article:
 
